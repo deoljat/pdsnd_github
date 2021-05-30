@@ -74,7 +74,10 @@ def load_data(city, month, day):
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.day_name(locale = 'English')
+    if (int(pd.__version__.split(".")[0]) > 0) or (int(pd.__version__.split(".")[1]) > 23):
+        df['day_of_week'] = df['Start Time'].dt.day_name(locale = 'English')
+    else:
+        df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
     if month != 0:
         df = df[df['month'] == month]
