@@ -11,9 +11,9 @@ This project explores data related to bike share systems for three major cites i
 
 ### Files used
 bikeshare.py
-chicago.csv
-new_york_city.csv
-washington.csv
+chicago.csv - not included in repository, please use link in credits below to load locally.
+new_york_city.csv - not included in repository, please use link in credits below to load locally.
+washington.csv - not included in repository, please use link in credits below to load locally.
 
 ### Credits
 Chicago data - https://www.divvybikes.com/system-data
