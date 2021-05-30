@@ -1,7 +1,6 @@
 import time
 import calendar
 import pandas as pd
-#import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -85,7 +84,19 @@ def load_data(city, month, day):
 
 
 def time_stats(df, month, day):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+
+    Args:
+        df - Pandas DataFrame filtered by month and day
+        (int) month - the month to filter by, or 0 if no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filterr
+    Returns:
+        The most popular month to travel, if no month is selected.
+        The most popular day to travel, if no day is selected
+        The most popular hour to travel.
+
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
