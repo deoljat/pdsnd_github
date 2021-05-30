@@ -7,15 +7,19 @@ Created: 30/05/2021
 Explore US Bikeshare Data Project
 
 ### Description
-This project explores data related to bike share systems for three major cites in the United States - Chicago, New York City and Washington.
+This project explores data related to the **bike share systems** for three major cites in the *United States - Chicago, New York City and Washington*.
 
 ### Files used
-bikeshare.py
-chicago.csv - not included in repository, please use link in credits below to load locally.
-new_york_city.csv - not included in repository, please use link in credits below to load locally.
-washington.csv - not included in repository, please use link in credits below to load locally.
+- Code file/s
+    - bikeshare.py
+- Data file/s
+   - chicago.csv - not included in repository, please use link in credits below to load locally.
+   - new_york_city.csv - not included in repository, please use link in credits below to load locally.
+   - washington.csv - not included in repository, please use link in credits below to load locally.
 
 ### Credits
 Chicago data - https://www.divvybikes.com/system-data
+
 New York City data - https://www.divvybikes.com/system-data
+
 Washington data - https://www.capitalbikeshare.com/system-data
