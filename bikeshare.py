@@ -193,20 +193,20 @@ def individual_trip_data(df):
     show_data = ""
     while show_data!='n' and show_data!='y':
         try:
-            show_data = input('Do you to view the first 5 rows of data? Y, N \n').lower()[0]
+            show_data = input('Do you to view the first 10 rows of data? Y, N \n').lower()[0]
             if show_data!='n' and show_data!='y':
                 print('invalid input')
         except:
             print('invalid input')
     if show_data =='y':
-        row_num = 5
+        row_num = 10
         while show_data =='y':
             show_data = ""
-            print(df.iloc[(row_num-5):row_num])
-            row_num += 5
+            print(df.iloc[(row_num-10):row_num])
+            row_num += 10
             while show_data!='n' and show_data!='y':
                 try:
-                    show_data = input('Do you to view the next 5 rows of data?? Y, N \n').lower()[0]
+                    show_data = input('Do you to view the next 10 rows of data?? Y, N \n').lower()[0]
                     if show_data!='n' and show_data!='y':
                         print('invalid input')
                 except:
