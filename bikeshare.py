@@ -73,7 +73,10 @@ def load_data(city, month, day):
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.day_name(locale = 'English')
+    if (int(pd.__version__.split(".")[0]) > 0) or (int(pd.__version__.split(".")[1]) > 23):
+        df['day_of_week'] = df['Start Time'].dt.day_name(locale = 'English')
+    else:
+        df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
     if month != 0:
         df = df[df['month'] == month]
@@ -201,20 +204,20 @@ def individual_trip_data(df):
     show_data = ""
     while show_data!='n' and show_data!='y':
         try:
-            show_data = input('Do you to view the first 5 rows of data? Y, N \n').lower()[0]
+            show_data = input('Do you to view the first 10 rows of data? Y, N \n').lower()[0]
             if show_data!='n' and show_data!='y':
                 print('invalid input')
         except:
             print('invalid input')
     if show_data =='y':
-        row_num = 5
+        row_num = 10
         while show_data =='y':
             show_data = ""
-            print(df.iloc[(row_num-5):row_num])
-            row_num += 5
+            print(df.iloc[(row_num-10):row_num])
+            row_num += 10
             while show_data!='n' and show_data!='y':
                 try:
-                    show_data = input('Do you to view the next 5 rows of data?? Y, N \n').lower()[0]
+                    show_data = input('Do you to view the next 10 rows of data?? Y, N \n').lower()[0]
                     if show_data!='n' and show_data!='y':
                         print('invalid input')
                 except:
